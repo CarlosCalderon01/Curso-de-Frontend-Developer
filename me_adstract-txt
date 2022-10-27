@@ -1,0 +1,409 @@
+Mis apuntes - mas importante
+
+Funcionamiento del Proceso de renderizado del motor del navegador
+
+    Note: El motor del navegador realiza 5 pasos o procesos para compilar nuestro código
+    hasta el renderizado por pantalla. Estos pasos son los siguientes:
+
+        1-) Transforma los archivos a un árbol de objetos HTML o CSS, estos se denominan
+            DOM (Document Object Model) y CSSDOM (Cascade Style Sheet Object Model),
+            respectivamente. Cada nodo en el árbol es una representación de los elementos
+            que contiene el archivo HTML o CSS.
+
+        2-) Calcula el estilo correspondiente a cada nodo del DOM relacionado al CSSDOM.
+
+        3-) Calcula las dimensiones de cada nodo y dónde va en la pantalla.
+
+        4-) Pinta o renderiza los diferentes elementos como cajas o contenedores.
+
+        5-) Agrupa todas las cajas en diferentes capas para convertirlas en una imagen
+            que se renderiza en pantalla.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Anatomía de un documento HTML y sus elementos 4/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Los elementos son cada una de las partes que conforman un archivo HTML.
+    Su estructura contiene:
+
+        Etiquetas: es la representación de un elemento HTML.
+            Se dividen en etiquetas de apertura, representadas por <etiqueta> y etiquetas
+            de cierre, representadas por </etiqueta>.
+        
+        Contenido: es el texto o elementos encerrados por la etiqueta, este valor es opcional
+            en algunas de ellas.
+    
+        Example:
+
+            etiqueta --> <h1></h1>
+            Atributo --> <h1 class= "title">
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+        No todas las etiquetas tiene apertura y cierre:
+
+        <img src = "cat.jpg" alt= "cat">
+
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// ¿Qué es HTML semántico? 5/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+HTML SEMANTICO --> Son etiquetas con significado
+
+    - ayudan a tu sitio a ser accesible
+    - mejora tu posicion - miento SEQ
+    - Codigo mas claro
+
+    SEO (Search Engine Optimization), es decir, Optimización para Motores de Búsqueda
+    que aparezcas en Google pues jaja).
+
+    Etiquetas de layout o diseño de la página:
+
+        Las etiquetas más usadas para layout o diseño de página son aquellas que utilizamos
+        para construir una página semántica.
+
+            <header>
+            <nav>
+            <section>
+            <article>
+            <aside>
+            <footer>
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Etiquetas de HTML más usadas 6/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Las etiquetas HTML más usadas son las siguientes, separadas en secciones comunes:
+
+        Header
+        Nav
+        Section
+        Article
+        Aside
+        Footer
+        Form
+        Input
+        Label
+        Button
+        H1—H6
+        P
+        Span
+        Img
+        Svg
+        Ifram
+        Video
+
+    1-) Etiquetas de enlace //-----//-----//-----//-----//-----//-----//-----//-----//
+
+        La etiqueta de enlace <a> o “anchor” define un vínculo o enlace hacia una URL.
+        Se utiliza con el atributo href con el valor del enlace.
+
+    2-) Etiquetas para textos //-----//-----//-----//-----//-----//-----//-----//-----//
+        
+        Las etiquetas más usadas para definir textos son:
+        
+            <h1>, <h2>, <h3>, <h4>, <h5>, <h6>: define diferentes tipos de títulos con diferente
+                orden de importancia, donde 1 tiene mayor relevancia.
+                Solo debe existir una etiqueta <h1> por página web.
+
+            <p>: define un párrafo.
+
+            <span>: define un contenedor genérico de tipo inline.
+                Igual que <div> no tiene valor semántico y debes evitar su uso innecesario.
+
+    3-) Etiquetas para multimedia
+
+            Las etiquetas más usadas para definir elementos multimedia son:
+
+            <img>: define una imagen. Es necesario especificar los atributos src con
+                la URL de la imagen; y alt que representa un texto alternativo en caso
+                de que la imagen no cargue correctamente.
+
+            <svg>: define un svg.
+
+            <iframe>: define un contenedor para una página web dentro de otra página web.
+
+            <video>: define un contenedor de video.
+
+    4-) Etiquetas para formularios
+
+            Las etiquetas más usadas para definir formularios son:
+
+            <form>: define un formulario.
+
+            <input>: define un elemento de entrada del formulario.
+                Es necesario especificar el tipo con el atributo type.
+                Existen varios tipos de input, revísalos en su documentación.
+
+            <label>: define un título para la etiqueta <input>.
+                Es utilizado para acciones de accesibilidad.
+
+            <button>: define un botón. Es usado para la interactividad de la página.
+
+    5-) Etiquetas para listas
+
+            Las etiquetas más usadas para definir formularios son:
+
+                <ul>: define una lista desordenada. (unordered list)
+                
+                <ol>: define una lista ordenada. (ordered list)
+
+                <li>: define un elemento dentro de una lista. (list item)
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Anatomía de una declaración CSS: selectores, propiedades y valores //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+Qué es una declaración de CSS:
+
+    Una declaración de CSS es un bloque que especifica el conjunto de estilos
+    que se añadirán a un elemento HTML. Su estructura contiene lo siguiente:
+
+        1-) Selector: define el elemento o conjunto de elementos a los cuales
+                se añadirán los estilos.
+
+        2-) Propiedad: es el nombre del estilo de CSS.
+
+        3-) Valor: es el valor que tomará la propiedad.
+
+
+    Propiedades iniciales de CSS:
+
+        Antes de empezar con CSS utilizaremos algunas propiedades de CSS.
+
+        1-) color: establece el color del texto de un elemento.
+        2-) background-color: establece un color de fondo al elemento.
+        3-) font-size: establece el tamaño de la fuente.
+        4-) width: establece la anchura de un elemento.
+        5-) height: establece la altura de un elemento.
+
+    Medidas iniciales:
+
+    Estas son las medidas iniciales que debes conocer para establecer
+        tamaños de elementos o de tipografía:
+
+        1-) px: establece una longitud de píxeles.
+        2-) %: establece un porcentaje con respecto a una medida base.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Tipos de selectores: básicos y combinadores 8/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Cuáles son los selectores básicos
+
+        selector {
+            Propiedad: Valor;
+        }
+
+    Tipos De Selectores:
+
+        Nombre              Ejemplo
+
+        1-) de tipo         div {/* Todos los div en el documento */}
+        2-) de clase        .elemento {} o tambien <div class="card"> Soy una carta </div>
+        3-) de iD           #id-del-elemento o tambien <button id="eliminar"> Eliminar  </button>
+        4-) de atributo     a[href="..."]{...}
+        5-) Universal       *{...}
+
+
+        1-) De tipo div
+
+                Html: div {/* Todos los div en el documento */}
+
+                CSS: div {
+                    
+                }
+
+        2-) de Clase
+
+                Html: <div class="card"> Soy una carta </div>
+
+                CSS: .elemento {} # Note: elemento = card
+
+        3-) De id
+
+                Html: <button id="eliminar"> Eliminar  </button>
+
+                CSS: #eliminar { /* La única etiqueta con el id "eliminar" */ }
+
+        4-) De atributo
+
+                Html: <a href="https://platzi.com"> Ir a Platzi </a>
+
+                CSS: a[href=""https://platzi.com"] { /* Todas las etiquetas <a> con una propiedad href con valor "https://platzi.com" */ }
+
+        5-) De Universal
+
+            CSS: * { /* Todos los elementos */ }
+
+
+JERARQIA DE SLECTORES
+
+    NOMBRE                  EXAMPLE:
+
+    DESCENDIENTES           div p
+    HIJO DIRECTO            div > p
+    ELEMENTO ADYACENTE      div + p
+    GENERAL DE HERMANOS     div ~ p 
+
+    Example: 
+        div > div {brackgroup: blue;}
+    <div>
+        <div>
+            todo se pina de azul
+        </div>
+    </div>
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Tipos de selectores: pseudoclases y pseudoelementos 9/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+                Pseudoclases                pseudoelementos
+
+                :active                     ::after
+                :focus                      ::before
+                :hover                      ::first-letter
+                :nth-child(n)               ::placeholder
+
+1-) Cuáles son las pseudoclases:
+        
+        Una pseudoclase define el estilo de un estado especial de un elemento.
+
+            1-) :hover --> Representa el estado en el cual el cursor está encima del elemento.
+
+            2-) :active --> Representa el estado de un elemento que no ha sido visitado.
+
+            3-) :visited --> Representa el estado de un elemento que ya ha sido visitado.
+
+            4-) :not() --> Representa el estado en el cual no coinciden los selectores que se indiquen
+
+            5-) :nth-child() --> Representa el estado en el cual coinciden los hijos del elemento según el valor indicado.
+
+        Valores de palabras clave:
+
+            odd: los elementos hijos en posiciones impares.
+
+            even: los elementos hijos en posiciones pares.
+
+2-) Cuáles son los pseudoselementos
+    
+        Un pseudoelemento define el estilo de una parte específica de un elemento.
+
+            Sintaxis -->
+
+                selector :: pseudo-elemento { 
+                    propiedad: valor;
+                }
+
+            ::before --> Sirve para agregar un contenido antes del elemento.
+                El contenido es agregado mediante la propiedad content de CSS.
+
+            ::after --> Sirve para agregar un contenido después del elemento.
+                El contenido es agregado mediante la propiedad content de CSS.
+
+            ::first-letter --> Sirve para añadir estilos a la primera letra del
+                texto de cualquier elemento.
+
+    Bibliografia:
+
+        https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+
+        https://css-tricks.com/pseudo-class-selectors/
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Cascada y especificidad en CSS 10/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Qué es la cascada en CSS:
+
+        La cascada es el concepto que determina qué estilos se colocan sobre otros, priorizando a aquellos que se encuentren más abajo del código. Recordarás que CSS es la abreviación de Cascade Style Sheets, que traducido es hojas de estilos en Cascada.
+
+    Qué es especificidad en CSS:
+
+        La especificidad consiste en dar un valor a una regla CSS sobre qué tan específico es el estilo, esto para que los navegadores puedan saber qué estilos aplicar sobre otros, independientemente de dónde se encuentren en el código. El estilo se aplicará donde la especificidad sea mayor.
+
+    Tipos de especificidad en CSS:
+
+        Existen 6 tipos de especificidad con su respectivo valor, donde X es la cantidad de estilos que lo contienen. Mira la siguiente imagen
+
+    Valor con mayor especificidad:
+
+        La palabra reservada !important es un valor de toda propiedad CSS que provee una especificidad de 10000, por lo que se aplicará ante otros estilos. Esto es una mala práctica y no deberías utilizarlo.
+
+    Bibliografia:
+
+        - https://specificity.keegan.st/
+
+        - https://htmlcolorcodes.com/
+
+    
+    Especificidad -->
+
+        Valoracion  -->     Descripcion
+
+        1,0,0,0,0           !important
+        0,1,0,0,0           Estilos En Linea
+        0,0,1,0,0           #ID
+        0,0,0,1,0           .Clases, atributos y Pseudo clases
+        0,0,0,0,1           Elementos
+        0,0,0,0,0           Selector Universal
+
+    !important 1, 0, 0, 0, 0
+
+        Reescribe cualquier estilo.
+        Para el navegador es de alta prioridad.
+        Hay que evitarlo o usarlo con mucha precaución.
+
+    Estilos en línea 0, 1, 0, 0, 0
+
+        Los estilos en línea aplicaran estilos nuevos sobre otros, aunque ya tengan clases o IDs.
+
+    #ID 0, 0, 1, 0, 0
+
+        Los ID tienen mayor peso que las clases y etiquetas.
+        Pero al ser únicos es preferible usarlos para funcionalidad que para estilos.
+
+    !important 1, 0, 0, 0, 0
+
+        Reescribe cualquier estilo.
+        Para el navegador es de alta prioridad.
+        Hay que evitarlo o usarlo con mucha precaución.
+
+    Estilos en línea 0, 1, 0, 0, 0
+
+        Los estilos en línea aplicaran estilos nuevos sobre otros, aunque ya tengan clases o IDs.
+    
+    #ID 0, 0, 1, 0, 0
+
+        Los ID tienen mayor peso que las clases y etiquetas.
+        Pero al ser únicos es preferible usarlos para funcionalidad que para estilos.
+
+    .Clases, atributos y pseudo clases 0, 0, 0, 1, 0
+
+        Es mejor usar clases para dar estilos, combinados con una metodología como BEM tendrás una especificidad manejable.
+    
+    Elementos 0, 0, 0, 0, 1
+
+        Los estilos aplicados a los elementos son los más básicos y fáciles de reescribir.
+    
+    Selector Universal 0, 0, 0, 0, 0
+
+        El selector universal no tiene peso alguno y será reescrito por cualquier otra regla.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----//  //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----//  //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----//  //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
