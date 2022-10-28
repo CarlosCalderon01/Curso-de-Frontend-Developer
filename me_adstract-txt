@@ -502,6 +502,330 @@ Tipos de display más usados: flexbox y CSS grid 12/23
         El padding consiste en el espacio entre el borde y el contenido del elemento HTML.
         Si imaginamos una caja, este valor sería el espacio entre la caja y lo que deseas guardar.
 
+    4-) Como se compone el modelo de caja:
+
+        Por fuera -->   Margin
+        Por linea -->   border
+        Por dentro -->  padding
+        Por contex -->  contenido
+
+    Bibliografia:
+
+    https://www.joshwcomeau.com/css/rules-of-margin-collapse/
+
+    https://learn-the-web.algonquindesign.ca/topics/flexbox/
+
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Colapso de márgenes 14/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    El colapso de márgenes sucede cuando dos elementos bloque adyacentes tienen un determinado valor de margin, entonces estos márgenes se solapan en un solo valor, el mayor de ambos.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Posicionamiento en CSS 15/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Que es el posicionamiento:
+    
+        El posicionamiento en CSS consiste en cómo un elemento se situará, con respecto a su elemento padre y al flujo normal del documento. El flujo normal del documento es el orden de los elementos establecidos en el HTML.
+
+            La posición del elemento se la define con la propiedad position, mediante los siguientes valores:
+
+                static
+                relative
+                absolute
+                sticky
+
+                Otros: Fixed, initial, inherial.
+
+            Propiedades de posición:
+
+                Además de la propiedad position, existen cuatro propiedades del elemento de acuerdo a su posición con respecto a su padre, estas son: top (arriba), bottom (debajo), left (izquierda) y right (derecha).
+
+    Tipos De Posicion
+    
+        Posición estática
+
+            La posición static es el valor por defecto de todo elemento HTML, consiste en respetar el flujo normal del documento donde las propiedades de posición no pueden ser establecidas.
+
+        Posición relative
+
+            La posición relative consiste en respetar el flujo normal del documento donde las propiedades de posición sí pueden ser establecidas.
+
+        Posición absoluta
+
+            La posición absolute consiste en quitar al elemento del flujo normal del documento donde las propiedades de posición sí pueden ser establecidas.
+
+        Posición fija
+
+            La posición fixed consiste en quitar al elemento del flujo normal del documento y fijarlo en un lugar; donde las propiedades de posición sí pueden ser establecidas.
+
+        Posición variable fija
+
+            La posición sticky consiste en quitar al elemento del flujo normal del documento y fijarlo en un lugar mientras su contenedor sea visible; donde las propiedades de posición sí pueden ser establecidas.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Z-index y el contexto de apilamiento 16/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    El contexto de apilamiento consiste en la superposición de capas o elementos a lo largo del eje Z del navegador. Esto es importante para evitar que un elemento esté ocultando a otro.
+
+    Qué son los planos y ejes:
+    
+        El navegador está constituido de tres planos y ejes: el ancho o X; el alto o Y; y el de profundidad o Z.
+
+        El eje X positivo está hacia la derecha; el eje Y positivo está hacia abajo; y el eje Z positivo está hacia el usuario.
+
+        Qué es la propiedad z-index
+        El contexto de apilamiento se configura con la propiedad z-index.
+
+        Por defecto, todos los elementos tienen un valor auto, es decir, el orden está definido por la estructura del HTML. Los primeros elementos estarán detrás y los últimos estarán de frente.
+
+        Si se establece un valor positivo, este elemento se sitúa por delante de los demás. Si se establece un valor negativo, se sitúa por detrás.
+
+        Si un elemento tiene un z-index mayor a otro, estará por delante. Sin embargo, si un elemento que tiene un z-index menor a otros, sus hijos nunca estarán por encima, aunque su z-index sea mayor.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Propiedades y valores de CSS más usados 17/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Las propiedades CSS más usadas son las siguientes, separadas en secciones comunes, algunas ya las conocemos:
+
+        Display
+        Margin
+        Padding
+        Border
+        Width
+        Height
+        Color
+        Background
+
+
+        Bibliografia:
+
+            https://cssreference.io/
+
+    Propiedades de textos:
+    
+        Las propiedades para manipular los textos y tipografía son los siguientes:
+
+        font-size: establece un tamaño de fuente.
+        font-weight: establece el resaltado del texto, con valores de 100 a 900 en intervalos 
+            de 100; donde 100 es delgada y 900 es negrita.
+        font-family: establece el tipo de fuente.
+        text-align: establece la posición del texto: right, left, center y justify.
+        color: establece el color del texto.
+
+    Bordes redondeados
+        
+        La propiedad que establece bordes redondeados es: border-radius.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Unidades de medida 18/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Las unidades de medida establecen una longitud para un determinado elemento o tipografía.
+        Existen dos tipos de medidas: absolutas y relativas.
+
+    Qué son las medidas absolutas:
+
+        Las medidas absolutas son valores fijos, por lo que la medida no cambiará. La unidad absoluta más utilizada son los píxeles px, las demás son muy poco utilizadas, pero es bueno que las conozcas.
+
+            Unidad	    Nombre	                    Equivalencia
+            
+            px	        píxeles	                    1 px = 1/96 in
+            cm	        centímetros	                1 cm = 96/2.54 px
+            mm	        milímetros	                1 mm = 1/10 cm
+            Q	        cuartos de milímetros	    1 Q = 1/4 mm
+            in	        pulgadas	                1 in = 2.54 cm = 96 px
+            pc	        picas	                    1 pc = 1/6 in
+            pt	        puntos	                    1 pt = 1/72 in
+
+    Qué son las medidas relativas.
+
+        Las medidas relativas son valores variables, por lo que la medida depende de un valor externo.
+        Se debe tener en cuidado con estas porque un pequeño cambio puede desencadenar tamaños muy elevados.
+
+            Unidad	    Depende de
+
+            em	        el elemento que lo contiene
+            rem	        el elemento raíz
+            vw	        1% del ancho de la pantalla (view width)
+            vh	        1% de la altura de la pantalla (view height)
+            vmin	    1% de la dimensión más pequeña de la pantalla
+            vman	    1% de la dimensión más grande de la pantalla
+            ch	        anchura del caracter “0” del elemento que lo contiene
+            lh	        altura de la línea del elemento que lo contiene
+
+    Diferencia entre rem y em:
+
+        La medida em depende del elemento que lo contiene, es decir, si un elemento tiene font-size de 20px, el valor de em es igual a 20px, el valor de 2em será de 40px y así sucesivamente.
+
+        La medida rem depende del elemento raíz, el valor del font-size del elemento raíz es de 16px, por lo tanto, el valor de 2rem es igual a 32px, y así sucesivamente.
+
+    Diferencia entre porcentajes y la anchura y altura de la pantalla:
+
+        Los porcentajes representan el tamaño con respecto al total del elemento padre. Si el elemento padre tiene 20px, entonces el 100% será de 20px.
+
+        Por otra parte, las medidas de anchura vw y altura vh representan el tamaño con respecto al total de la pantalla. Si el elemento tiene un tamaño de 100vw será el 100 por ciento de la pantalla.
+
+        Si un elemento tiene todo el tamaño de la pantalla, entonces solamente en ese punto la medida 100% será igual a 100vw o 100vh.
+
+    Problema con las medidas de texto:
+
+        Los navegadores tienen una opción para cambiar el tamaño del texto. Con medidas absolutas, el tamaño de la letra no cambiará, por lo que será un problema para el usuario.
+
+        Con medidas relativas, el tamaño cambiará con respecto a la fuente del elemento raíz. Por lo que estas son una buena opción para solucionar este problema de accesibilidad, en específico la medida rem.
+
+        Sin embargo, la medida rem equivale a 16px y puede ser confuso mientras utilices valores altos. Por lo que vamos a cambiar el valor del elemento de la raíz para que la medida rem sea igual a 10px.
+
+        En la etiqueta <html> cambia el valor de la propiedad font-size a 62.5%, resultado de una regla de tres: si 16px es igual al 100% entonces cuál será el porcentaje para 10px.
+
+    
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Responsive Design 19/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    El diseño responsivo (Responsive Design) consiste en un conjunto de herramientas para que tu sitio se vea bien en varias medidas de pantalla, esto incluye imágenes, tipografía, internacionalización de la página y entre otros.
+
+    En la actualidad, la mayoría de sitios web son visitados desde un celular, por lo que asegurarse que nuestro sitio sea responsivo para cualquier dispositivo es fundamental para optimizar las ganancias.
+
+    Qué son las media queries
+
+        Las media queries son reglas CSS que establecen un comportamiento distinto o diferentes estilos en un cierto rango de la pantalla. Esto sirve para establecer el layout del sitio web para diferentes tipos de pantalla: escritorio, tablets y celulares.
+
+    Estos son dos tipos de media querie :
+
+        max-width / max-height: establece un rango máximo para cierto comportamiento.
+
+        min-width / min-height: establece un rango mínimo para cierto comportamiento.
+        
+        Note: Estos valores son parecidos a condicionales, mientras se cumpla la condición, aplica determinados estilos.
+
+    Estructura de la media querie:
+
+        La estructura de una media querie consiste en empezar con @media, seguido del tipo de la media querie estableciendo un rango, envolviendo las reglas CSS dentro de ese rango.
+
+    Herramientas del desarrollador para media queries:
+
+        Para observar que los cambios se estén aplicando correctamente, las herramientas de desarrollador serán de gran ayuda.
+
+        Abre las herramientas del navegador y da clic en la opción “Toggle device tool”, aquí podrás manipular la pantalla y observar en cuántos píxeles está ocurriendo determinados estilos.
+
+        Utiliza el siguiente ejemplo para visualizar cómo cambian los estilos según la longitud de la pantalla. Puedes revisar la media querie que está en el código. Aunque solo cambien el color de dos elementos, puede estar cualquier propiedad que desees, prueba con todo.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// ¿Qué son las arquitecturas CSS? ¿Para qué sirven? 20/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Las arquitecturas CSS consisten en manejarel código CSS con una serie de reglas
+        y patrones para facilitar su lectura, mantenibilidad y escabilidad.
+
+        El código que has manejado no se asemeja a la realidad, pues deberás manejar varios cientos o miles de líneas de código. Las arquitecturas CSS se encargan de manejar una norma en el código para que cualquiera pueda añadir o quitar funcionalidad sin mucho trabajo.
+
+    Objetivos de las arquitecturas de CSS
+
+        Los objetivos de las arquitecturas de CSS son:
+
+            Ser predecible: el código debe ser lo menos complejo posible.
+            Reutilizable: el código debe ser lo menos redundante, para evitar problemas con la especificidad.
+            Mantenible: el código debe ser lo más fácil de manejar para añadir o quitar estilos.
+            Escalable: el código debe ser capaz de crecer.
+
+    Buenas prácticas de las arquitecturas de CSS:
+
+         Las buenas prácticas de las arquitecturas de CSS son:
+
+            Lineamientos y estándares: definir normas en tu grupo de trabajo de cómo estará escrito el código.
+
+            Documentación: establecer una breve explicación del código y de los lineamientos, esto sirve especialmente para nuevas personas se familiaricen con lo que deben hacer.
+
+            Componentes: establecer de manera componetizada cada uno de los elementos de tu página, es decir, manejarlos por partes para después unirlos en un todo.
+
+    Resumen DEl profesor comment:
+
+    ¿Qué son y para qué nos sirven las arquitecturas CSS?
+
+        Sirven para mantener un orden y una coherencia durante todo el proyecto. Tiene los siguientes objetivos:
+
+            Predecibles: escribir reglas claras.
+            Reutilizable: no escribir código redundante.
+            Mantenible: que sea fácil de leer y adaptable a los estándares.
+            Escalable: que pueda crecer fácilmente sin afectar el rendimiento.
+        .
+        Estos objetivos se deben ver reflejadas en buenas practicas que debe conocer todo el equipo involucrado en el proyecto como:
+
+            Establecer reglas
+            Explicar la estructura base
+            Establecer estándares de codificación
+            Evitar largas hojas de estilo
+            Documentación
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// OOCSS, BEM, SMACSS, ITCSS y Atomic Design 21/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Qué es CSS orientado a objetos:
+
+        La arquitectura OOCSS (Object Oriented CSS) consiste en separar la estructura principal y la piel o máscara.
+
+        En otras palabras, consiste en tener objetos que son estructuras principales. Estos objetos estarán unidos en una máscara, donde esta será la que cambie pero manteniendo la estructura intacta.
+
+    Qué es BEM: bloque, elemento y modificador:
+
+        La arquitectura BEM (Block-Element-Modifier) es una de las más utilizadas actualmente. Consiste en manejar los elementos en clases definidas por bloques, elementos y modificadores.
+
+            Bloque: es la estructura principal que es contenedora de varios elementos.
+            Elemento: es el elemento HTML que hace referencia el contenedor.
+            Modificador: es un estilo específico para el elemento. Por ejemplo, un botón que tenga un color diferente a los demás, esto tiene relación con la especificidad.
+
+    Qué es la arquitectura escalable y modular de CSS:
+
+        La arquitectura SMACSS (Scalable and Modular Architecture for CSS) indica el orden de componentes que estarán ubicados en carpetas. La unión de estos componentes dará como resultado tu página web con estilos.
+
+            Base: elementos base, como botones, títulos, enlaces.
+            Layout: estructura de la página, relacionado con el Responsive Design.
+            Módulos: elementos que contienen a los elementos base.
+            Estado: estilos relacionados con el comportamiento de elemento, relacionado con las pseudoclases y pseudoelementos.
+            Temas: conjunto de estilos que definen tu página web.
+
+    Qué es el triángulo invertido de CSS:
+
+        La arquitectura ITCSS (Inverted Triangle CSS) consiste en separar los archivos del proyecto; mediante ajustes, herramientas, elementos, entre otros. Todo esto para manejar los detalles de especificidad, claridad y magnitud.
+
+    Qué es el diseño atómico:
+
+        La arquitectura Atomic Design también es una de las más utilizadas actualmente. Consiste en manejar los elementos como una estructura mínima, a partir de la unión de varias de estas, dará como resultado los estilos de la página web. Se basa en la estructura mínima de la materia, los átomos.
+
+            Átomos: estructura mínima; como botones, enlaces, títulos, entre otros.
+            Moléculas: unión de átomos.
+            Organismos: unión de moléculas.
+            Plantillas: unión de organismos.
+            Páginas: unión de plantillas.
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// CSS para entrevistas y mundo laboral 22/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    No hay una fórmula secreta para pasar cualquier entrevista, cada una varía de acuerdo a la empresa. La mayoría de compañías buscan que domines las tres tecnologías web en conjunto: HTML, CSS y JavaScript.
+
+    Aprende a dominar los conceptos:
+
+        Hay muchos temas para dominar cuando inicias tu camino en frontend developer y los debes entender, no de manera profunda, sino que sepas defenderte.
+
+        No te aprendas de memoria, trata de realizar proyectos, copia alguna interfaz (OJO, solo la interfaz) de alguna página famosa como Netflix, Facebook, e incluso de Platzi 💚.
+
+        Sin embargo, no realices demasiadas copias, debes entender las bases de CSS para seguir con JavaScript lo más rápido posible. Cuando hagas proyectos de JavaScript, también incluirás CSS, por lo que puedes seguir aprendiendo uno mientras repasas el otro.
+
+    El “No” es tu amigo, el “no sé” tu enemigo:
+
+        Cuando te digan “No” en una entrevista, no significa el fin del mundo, míralo como un concepto que te falta un poco repasar, mejora y, a por la siguiente entrevista.
+
+        No digas simplemente “no sé” a algo que desconozcas aún. Entabla una conversación, sé honesto pero muestra tu interés en mejorar. Menciona que no sabes tal tecnología o tal concepto, pero, que lo puedes aprender. Puede que no funcione, pero es mejor a decir un seco “no sé”.
+
+        Todo esto que te menciono tiene relación con tus habilidades blandas (soft skills) que también son igual importantes como tu conocimiento.
 
 //-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
 //-----//-----//  //-----//-----//
@@ -511,18 +835,3 @@ Tipos de display más usados: flexbox y CSS grid 12/23
 //-----//-----//  //-----//-----//
 //-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
 
-//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
-//-----//-----//  //-----//-----//
-//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
-
-//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
-//-----//-----//  //-----//-----//
-//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
-
-//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
-//-----//-----//  //-----//-----//
-//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
-
-//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
-//-----//-----//  //-----//-----//
-//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
