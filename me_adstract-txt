@@ -397,6 +397,125 @@ JERARQIA DE SLECTORES
         El selector universal no tiene peso alguno y será reescrito por cualquier otra regla.
 
 //-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+Tipos de display más usados: block, inline e inline-block 11/23
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    La propiedad display establece el tipo de visualización de los elementos HTML.
+        sin afectar el flujo normal de los elementos.
+
+        1-) blok                por defecto: <div>
+        2-) inline              por defecto: <span>
+        3-) inline -block       por defecto: <button>
+        4-) flex
+        5-) grid
+
+    Existen etiquetas que por defecto su display ya está determinado,
+        como la etiqueta <div> que tiene display block,
+        <span> tiene display inline y <button> tiene display inline-block.
+
+    1-) Visualización en bloque (block)
+
+            El display block **establece que un elemento ocupará todo el espacio disponible por defecto y el siguiente elemento a este se situará por debajo.
+
+            Es posible añadir medidas de anchura width y altura height a estos a elementos.
+
+            También es posible agregar todas las propiedades del modelo de caja (no te preocupes de este concepto, ya lo abordaremos).
+
+    2-) Visualización en línea (inline)
+
+            El display inline establece que un elemento ocupará el espacio del contenido del mismo y el siguiente elemento se situará a la derecha.
+
+            No es posible añadir medidas de anchura width y altura height a estos a elementos.
+
+            También, no es posible agregar todas las propiedades del modelo de caja, únicamente funcionará la propiedad margin en el eje horizontal (no te preocupes de este concepto, ya lo abordaremos).
+
+    3-) Visualización de bloque y línea (inline-block)
+
+            El display inline-block combina las ventajas de bloque de colocar medidas al elemento y propiedades del modelo de caja correctamente; con las ventajas de inline de color un elemento seguido de otro en el mismo espacio.
+
+            Si elemento excede el contenido total, se coloca en la siguiente línea por debajo.
+
+    EXTRA -) Visualización nula (none)
+
+        El display none desactiva la visualización de un elemento, como si el elemento no existiera.
+
+        inline: Estos elementos son los que su caja mide exactamente lo mismo que su contenido.
+            Estos elementos los podemos usar en textos y en lugar de que se agreguen en una nueva línea se agregaran justo al ladito del texto. ❗ Tienen como desventaja que no podemos ponerles márgenes ni tampoco podemos cambiar su tamaño.
+
+        block: Estos elementos ocupan toda la pantalla,
+            por lo que si quieres agregar otro elemento, este se agregará automáticamente abajo. No importa que tengas poco contenido, el elemento sí o sí va a ocupar toda la pantalla.
+
+        inline-block: Esto mezcla lo mejor de ambos mundos.
+            Con este display podemos tener tanto los beneficios de inline como de block, es decir, podemos tener elementos que no ocupen todo el ancho de la pantalla, sino que ocupen solamente lo que su contenido ocupa, pero también vamos a poder darle márgenes y podremos cambiar su tamaño 🤠. 
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+Tipos de display más usados: flexbox y CSS grid 12/23
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    Qué es flexbox
+
+        Flexbox consiste en el ordenamiento de elementos hijos en un solo eje, por defecto horizontalmente. El elemento padre o contenedor deberá contener la propiedad display con el valor flex. A partir de aquí, ya puedes ordenar los hijos según sea necesario.
+
+    ué es grid
+
+        Grid consiste en el ordenamiento de elementos hijos en dos ejes, como si fuera una cuadrícula o tabla. El elemento padre o contenedor deberá contener la propiedad display con el valor grid y debes definir las medidas de las columnas y de las filas. A partir de aquí, ya puedes ordenar los hijos según sea necesario.
+
+    Bibliografia:
+    
+    1-) A Complete Guide to Flexbox:
+    
+            https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+    2-) A Complete Guide to Grid:
+            
+            https://css-tricks.com/snippets/css/complete-guide-grid/
+
+    3-) Flexbox vs CSS Grid: ¿Cuál es la diferencia?:
+    
+            https://platzi.com/blog/flexbox-vs-css-grid-cual-es-la-diferencia/
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----// Modelo de caja 13/23 //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+    El modelo de caja se compone de cuatro elementos: margin, border, padding y contenido.
+
+    1-) Qué es el contenido del elemento HTML:
+
+        El contenido del elemento, como su nombre lo indica, es todo lo que está dentro del elemento. Este tiene medidas establecidas por las propiedades width y height, que representan la anchura y la altura, respectivamente. Si imaginamos una caja, este valor sería todo lo que decidas colocar dentro.
+
+    2-) Qué son los bordes del elemento HTML:
+
+        El border consiste en el perfil o borde de un elemento HTML. Si imaginamos una caja, sería la caja en sí. Para definir un borde es necesario utilizar las siguientes tres propiedades:
+
+        - border-color: establece el color del borde.
+
+        - border-style: establece el estilo propio del borde, estos pueden ser:
+            none (sin borde), dotted (puntos), dashed (guiones), solid (continuo),
+            double (doble continuo), groove (recuadro).
+            
+        - border-width: estable la anchura del borde.
+        También se puede establecer los tres valores en una sola propiedad border donde no importa el orden.
+
+    3-) Qué es el espaciado interno del elemento HTML o padding:
+    
+        El padding consiste en el espacio entre el borde y el contenido del elemento HTML.
+        Si imaginamos una caja, este valor sería el espacio entre la caja y lo que deseas guardar.
+
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----//  //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----//  //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+//-----//-----//  //-----//-----//
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
+
+//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
 //-----//-----//  //-----//-----//
 //-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//-----//
 
